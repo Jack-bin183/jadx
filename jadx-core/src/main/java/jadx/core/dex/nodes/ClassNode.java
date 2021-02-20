@@ -371,6 +371,15 @@ public class ClassNode extends NotificationAttrNode implements ILoadable, ICodeN
 		return null;
 	}
 
+	public FieldNode searchFieldByShortId(String shortId) {
+		for (FieldNode f : fields) {
+			if (f.getFieldInfo().getShortId().equals(shortId)) {
+				return f;
+			}
+		}
+		return null;
+	}
+
 	public MethodNode searchMethod(MethodInfo mth) {
 		return mthInfoMap.get(mth);
 	}
